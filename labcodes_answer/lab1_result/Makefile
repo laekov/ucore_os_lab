@@ -24,9 +24,9 @@ endif
 # try to infer the correct QEMU
 ifndef QEMU
 QEMU := $(shell if which qemu-system-i386 > /dev/null; \
-	then echo 'qemu-system-i386'; exit; \
+	then echo 'qemu-system-i386 -nographic'; exit; \
 	elif which i386-elf-qemu > /dev/null; \
-	then echo 'i386-elf-qemu'; exit; \
+	then echo 'i386-elf-qemu -nographic'; exit; \
 	else \
 	echo "***" 1>&2; \
 	echo "*** Error: Couldn't find a working QEMU executable." 1>&2; \
@@ -199,14 +199,14 @@ all: $(TARGETS)
 
 .PHONY: qemu qemu-nox debug debug-nox
 lab1-mon: $(UCOREIMG)
-	$(V)$(TERMINAL) -e "$(QEMU) -S -s -d in_asm -D $(BINDIR)/q.log -monitor stdio -hda $< -serial null"
+	$(V)$(QEMU) -S -s -d in_asm -D $(BINDIR)/q.log -monitor stdio -hda $< -serial null
 	$(V)sleep 2
-	$(V)$(TERMINAL) -e "gdb -q -x tools/lab1init"
+	$(V)gdb -q -x tools/lab1init
 debug-mon: $(UCOREIMG)
 #	$(V)$(QEMU) -S -s -monitor stdio -hda $< -serial null &
-	$(V)$(TERMINAL) -e "$(QEMU) -S -s -monitor stdio -hda $< -serial null"
+	$(V)$(QEMU) -S -s -monitor stdio -hda $< -serial null
 	$(V)sleep 2
-	$(V)$(TERMINAL) -e "gdb -q -x tools/moninit"
+	$(V)gdb -q -x tools/moninit
 qemu-mon: $(UCOREIMG)
 	$(V)$(QEMU) -monitor stdio -hda $< -serial null
 qemu: $(UCOREIMG)
@@ -220,12 +220,12 @@ gdb: $(UCOREIMG)
 debug: $(UCOREIMG)
 	$(V)$(QEMU) -S -s -parallel stdio -hda $< -serial null &
 	$(V)sleep 2
-	$(V)$(TERMINAL)  -e "cgdb -q -x tools/gdbinit"
+	$(V)cgdb -q -x tools/gdbinit
 	
 debug-nox: $(UCOREIMG)
 	$(V)$(QEMU) -S -s -serial mon:stdio -hda $< -nographic &
 	$(V)sleep 2
-	$(V)$(TERMINAL) -e "gdb -q -x tools/gdbinit"
+	$(V)gdb -q -x tools/gdbinit
 
 .PHONY: grade touch
 
