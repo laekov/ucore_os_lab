@@ -72,6 +72,7 @@ default_init_memmap(struct Page *base, size_t n) {
 	uint32_t *lastProp = 0;
     for (; p != base + n; p ++) {
         assert(PageReserved(p));
+		p->flags = 0;
 		SetPageReserved(p);
 		if (&p->property - lastProp == sizeof(struct Page)) {
 			++ *lastProp;
