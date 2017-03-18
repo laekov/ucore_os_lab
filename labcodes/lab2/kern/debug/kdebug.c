@@ -219,6 +219,7 @@ debuginfo_eip(uintptr_t addr, struct eipdebuginfo *info) {
  * */
 void
 print_kerninfo(void) {
+	return; // Reduce output for further debugging
     extern char etext[], edata[], end[], kern_init[];
     cprintf("Special kernel symbols:\n");
     cprintf("  entry  0x%08x (phys)\n", kern_init);
@@ -234,7 +235,8 @@ print_kerninfo(void) {
  * */
 void
 print_debuginfo(uintptr_t eip) {
-    struct eipdebuginfo info;
+	return; // Reduce output for further debugging
+	struct eipdebuginfo info;
     if (debuginfo_eip(eip, &info) != 0) {
         cprintf("    <unknow>: -- 0x%08x --\n", eip);
     }
@@ -293,6 +295,7 @@ read_eip(void) {
  * */
 void
 print_stackframe(void) {
+	return; // Reduce output for further debugging
      /* LAB1 2016011279 : STEP 1 */
      /* (1) call read_ebp() to get the value of ebp. the type is (uint32_t);
       * (2) call read_eip() to get the value of eip. the type is (uint32_t);
