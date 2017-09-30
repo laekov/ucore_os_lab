@@ -1,3 +1,4 @@
+#include <sync.h>
 #include <defs.h>
 #include <stdio.h>
 #include <console.h>
@@ -26,7 +27,12 @@ cputch(int c, int *cnt) {
 int
 vcprintf(const char *fmt, va_list ap) {
     int cnt = 0;
-    vprintfmt((void*)cputch, &cnt, fmt, ap);
+    bool intr_flag;
+    local_intr_save(intr_flag);
+	{
+		vprintfmt((void*)cputch, &cnt, fmt, ap);
+	}
+    local_intr_restore(intr_flag);
     return cnt;
 }
 

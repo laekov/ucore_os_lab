@@ -1,0 +1,36 @@
+kern/debug/kdebug.c:338:     /* LAB1 YOUR CODE : STEP 1 */
+kern/fs/sfs/sfs_inode.c:592:  //LAB8:EXERCISE1 YOUR CODE HINT: call sfs_bmap_load_nolock, sfs_rbuf, sfs_rblock,etc. read different kind of blocks in file
+kern/mm/default_pmm.c:12:// LAB2 EXERCISE 1: YOUR CODE
+kern/mm/pmm.c:366:    /* LAB2 EXERCISE 2: YOUR CODE
+kern/mm/pmm.c:419:    /* LAB2 EXERCISE 3: YOUR CODE
+kern/mm/pmm.c:511:        /* LAB5:EXERCISE2 YOUR CODE
+kern/mm/swap_fifo.c:52:    /*LAB3 EXERCISE 2: YOUR CODE*/ 
+kern/mm/swap_fifo.c:67:     /*LAB3 EXERCISE 2: YOUR CODE*/ 
+kern/mm/vmm.c:437:    /*LAB3 EXERCISE 1: YOUR CODE
+kern/mm/vmm.c:455:    /*LAB3 EXERCISE 1: YOUR CODE*/
+kern/mm/vmm.c:462:    /*LAB3 EXERCISE 2: YOUR CODE
+kern/process/proc.c:93:    //LAB4:EXERCISE1 YOUR CODE
+kern/process/proc.c:109:     //LAB5 YOUR CODE : (update LAB4 steps)
+kern/process/proc.c:115:     //LAB6 YOUR CODE : (update LAB5 steps)
+kern/process/proc.c:125:    //LAB8:EXERCISE2 YOUR CODE HINT:need add some code to init fs in proc_struct, ...
+kern/process/proc.c:430:    //LAB4:EXERCISE2 YOUR CODE
+kern/process/proc.c:431:    //LAB8:EXERCISE2 YOUR CODE  HINT:how to copy the fs in parent's proc_struct?
+kern/process/proc.c:457:	//LAB5 YOUR CODE : (update LAB4 steps)
+kern/process/proc.c:552:    /* LAB8:EXERCISE2 YOUR CODE  HINT:how to load the file with handler fd  in to process's memory? how to setup argc/argv?
+kern/schedule/default_sched_stride_c:10:/* LAB6: YOUR CODE */
+kern/schedule/default_sched_stride_c:39:     /* LAB6: YOUR CODE 
+kern/schedule/default_sched_stride_c:61:     /* LAB6: YOUR CODE 
+kern/schedule/default_sched_stride_c:82:     /* LAB6: YOUR CODE 
+kern/schedule/default_sched_stride_c:104:     /* LAB6: YOUR CODE 
+kern/schedule/default_sched_stride_c:123:     /* LAB6: YOUR CODE */
+kern/sync/monitor.c:28:   //LAB7 EXERCISE1: YOUR CODE
+kern/sync/monitor.c:47:    //LAB7 EXERCISE1: YOUR CODE
+kern/sync/check_sync.c:184:     // LAB7 EXERCISE1: YOUR CODE
+kern/sync/check_sync.c:198:     // LAB7 EXERCISE1: YOUR CODE
+kern/trap/trap.c:45:     /* LAB1 YOUR CODE : STEP 2 */
+kern/trap/trap.c:57:     /* LAB5 YOUR CODE */ 
+kern/trap/trap.c:217:        /* LAB1 YOUR CODE : STEP 3 */
+kern/trap/trap.c:223:        /* LAB5 YOUR CODE */
+kern/trap/trap.c:227:        /* LAB6 YOUR CODE */
+kern/trap/trap.c:232:        /* LAB7 YOUR CODE */
+kern/trap/trap.c:247:    //LAB1 CHALLENGE 1 : YOUR CODE you should modify below codes.
